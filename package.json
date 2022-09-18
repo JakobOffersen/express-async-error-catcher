@@ -1,6 +1,6 @@
 {
   "name": "express-async-error-catcher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Catch errors in async request handlers and forward them to your error handler",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,7 +18,14 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
+  "keywords": [
+    "express",
+    "async",
+    "error",
+    "catcher",
+    "error catcher",
+    "error handler",
+  ],
   "license": "MIT",
   "homepage": "https://github.com/JakobOffersen/express-async-error-catcher",
   "repository": {
