@@ -1,0 +1,45 @@
+{
+  "name": "express-async-error-catcher",
+  "version": "0.1.0",
+  "description": "Catch errors in async request handlers and forward them to your error handler",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.js",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:types": "tsc -p tsconfig.types.json",
+    "package": "npm run build && npm pack"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "license": "MIT",
+  "homepage": "https://github.com/JakobOffersen/express-async-error-catcher",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JakobOffersen/express-async-error-catcher"
+  },
+  "bugs": {
+    "url": "https://github.com/JakobOffersen/express-async-error-catcher/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "printWidth": 120
+  }
+}
