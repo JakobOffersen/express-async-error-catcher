@@ -1,6 +1,6 @@
 {
   "name": "express-async-error-catcher",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Catch errors in async request handlers and forward them to your error handler",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
