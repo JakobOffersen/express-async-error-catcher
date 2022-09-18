@@ -24,7 +24,7 @@
     "error",
     "catcher",
     "error catcher",
-    "error handler",
+    "error handler"
   ],
   "license": "MIT",
   "homepage": "https://github.com/JakobOffersen/express-async-error-catcher",
