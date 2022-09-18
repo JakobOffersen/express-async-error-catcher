@@ -2,7 +2,9 @@
 Catch errors in async request handlers and forward them to your error handler
 
 ## Install
-
+```
+npm i express-async-error-catcher
+```
 ## Features
 - Forward errors from rejected promises to your error handler
 - Forwards the router generics from its `.get`, `.put`, `.post`, `.delete` to your request handler, if you'r using `typescript`
