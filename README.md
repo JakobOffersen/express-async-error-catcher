@@ -9,15 +9,29 @@ Catch errors in async request handlers and forward them to your error handler
 
 ## Example
 ``` ts
+import express, { Request, Response, NextFunction } from "express"
 import { asyncErrorCatcher } from "express-async-error-catcher"
-import express from "express"
 
-const router = express.Router()
+const app = express()
 
-type RouteParams = { id: string }
-router.get<"/users/:id/", RouteParams>("/:id", asyncErrorCatcher(async (req, res) => {
-  const userID = req.params.id // infered as 'string'
-  await thisMayThrow(userID) // is forwarded to the error-handler if it throws
+app.get("/safe", asyncErrorCatcher(async (req, res) => {
+  await new Promise((res, rej) => {
+    setTimeout(() => rej("rejected"), 2000) // Is caught by 'errorHandler' after 2s
+  })
   // ...
 }))
+app.get("/unsafe", async (req, res) => {
+  await new Promise((res, rej) => {
+    setTimeout(() => rej("rejected"), 2000) // Is NOT caught by 'errorHandler' Terminates express with 'UnhandledPromiseRejection'
+  })
+  // ...
+})
+
+const errorHandler = (error: Error, request: Request, response: Response, next: NextFunction) => {
+  console.log("caught error", error)
+  // ...
+}
+
+app.use(errorHandler)
+app.listen(3000)
 ```

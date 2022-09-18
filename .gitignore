@@ -29,3 +29,5 @@ jspm_packages/
 
 # packaged npm package
 *.tgz
+
+example
